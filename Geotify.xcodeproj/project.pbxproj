@@ -12,6 +12,8 @@
 		29F0BC631F826BDF003CA75A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29F0BC611F826BDF003CA75A /* Main.storyboard */; };
 		29F0BC651F826BDF003CA75A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29F0BC641F826BDF003CA75A /* Assets.xcassets */; };
 		29F0BC681F826BDF003CA75A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29F0BC661F826BDF003CA75A /* LaunchScreen.storyboard */; };
+		29F0BC721F826EFC003CA75A /* AddGeotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0BC711F826EFC003CA75A /* AddGeotificationViewController.swift */; };
+		29F0BC751F827015003CA75A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F0BC741F827015003CA75A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		29F0BC641F826BDF003CA75A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29F0BC671F826BDF003CA75A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29F0BC691F826BDF003CA75A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29F0BC711F826EFC003CA75A /* AddGeotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeotificationViewController.swift; sourceTree = "<group>"; };
+		29F0BC741F827015003CA75A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29F0BC751F827015003CA75A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,7 @@
 			children = (
 				29F0BC5C1F826BDF003CA75A /* Geotify */,
 				29F0BC5B1F826BDF003CA75A /* Products */,
+				29F0BC731F827015003CA75A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +66,17 @@
 				29F0BC641F826BDF003CA75A /* Assets.xcassets */,
 				29F0BC661F826BDF003CA75A /* LaunchScreen.storyboard */,
 				29F0BC691F826BDF003CA75A /* Info.plist */,
+				29F0BC711F826EFC003CA75A /* AddGeotificationViewController.swift */,
 			);
 			path = Geotify;
+			sourceTree = "<group>";
+		};
+		29F0BC731F827015003CA75A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29F0BC741F827015003CA75A /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29F0BC721F826EFC003CA75A /* AddGeotificationViewController.swift in Sources */,
 				29F0BC601F826BDF003CA75A /* ViewController.swift in Sources */,
 				29F0BC5E1F826BDF003CA75A /* AppDelegate.swift in Sources */,
 			);
