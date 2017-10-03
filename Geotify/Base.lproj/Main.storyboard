@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,7 +58,22 @@
                     <view key="view" contentMode="scaleToFill" id="7gu-76-X96">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rGq-Mu-Bfx">
+                                <rect key="frame" x="16" y="72" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Upon Entry"/>
+                                    <segment title="Upon Exit"/>
+                                </segments>
+                                <color key="tintColor" red="0.25477929510000002" green="0.66319003809999999" blue="0.19447524220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rGq-Mu-Bfx" firstAttribute="leading" secondItem="7gu-76-X96" secondAttribute="leadingMargin" id="4oA-n2-lRi"/>
+                            <constraint firstItem="rGq-Mu-Bfx" firstAttribute="top" secondItem="AOP-GL-ves" secondAttribute="bottom" constant="8" id="eG6-OV-MQ1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rGq-Mu-Bfx" secondAttribute="trailing" id="inM-VM-gK8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Geotification" id="wRD-VA-2HK">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="Twp-ZD-rjf">
@@ -70,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ss-Z7-YN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3266" y="124"/>
+            <point key="canvasLocation" x="1057" y="994"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="obb-eH-8tR">
@@ -108,7 +124,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jok-Ia-3RE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2375" y="124"/>
+            <point key="canvasLocation" x="161" y="994"/>
         </scene>
     </scenes>
 </document>
