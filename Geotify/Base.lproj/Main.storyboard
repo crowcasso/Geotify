@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,6 +36,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Geotifications (0)" id="uOx-Ys-uL7">
+                        <barButtonItem key="leftBarButtonItem" image="location" id="BJM-tK-kQj">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="zoomToCurrentLocation:" destination="BYZ-38-t0r" id="dyr-VC-Xuc"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="f30-rk-kxA">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -41,12 +49,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="EG9-t3-0aA" id="FhF-DY-1kB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
         </scene>
-        <!--Add Geotification-->
+        <!--Add Geotifications-->
         <scene sceneID="beo-Nq-DWz">
             <objects>
                 <viewController id="Ijb-l5-DRd" customClass="AddGeotificationViewController" customModule="Geotify" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,10 +68,83 @@
                     <view key="view" contentMode="scaleToFill" id="7gu-76-X96">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hej-mc-NGn">
+                                <rect key="frame" x="16" y="72" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Upon Entry"/>
+                                    <segment title="Upon Exit"/>
+                                </segments>
+                                <color key="tintColor" red="0.25477929510000002" green="0.66319003809999999" blue="0.19447524220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Awg-TV-ege">
+                                <rect key="frame" x="0.0" y="108" width="375" height="259"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Awg-TV-ege" secondAttribute="height" multiplier="375:259" id="C5j-yX-Ioj"/>
+                                </constraints>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2c-wC-wCj">
+                                <rect key="frame" x="16" y="375" width="343" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-ku-7gN">
+                                        <rect key="frame" x="0.0" y="0.0" width="61" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ISB-fl-r32">
+                                        <rect key="frame" x="61" y="0.0" width="282" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7A-dn-p6t">
+                                <rect key="frame" x="16" y="413" width="343" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evo-Gg-heV">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="afp-El-3I4">
+                                        <rect key="frame" x="46" y="0.0" width="297" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aco-bM-vYM">
+                                <rect key="frame" x="16" y="507" width="343" height="34"/>
+                                <state key="normal" title="Add New Geotification">
+                                    <color key="titleColor" red="0.25477929510000002" green="0.66319003809999999" blue="0.19447524220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K7A-dn-p6t" firstAttribute="top" secondItem="M2c-wC-wCj" secondAttribute="bottom" constant="8" id="25l-v3-O8n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K7A-dn-p6t" secondAttribute="trailing" id="2zo-0s-mZM"/>
+                            <constraint firstItem="K7A-dn-p6t" firstAttribute="leading" secondItem="7gu-76-X96" secondAttribute="leadingMargin" id="3C0-eh-kfj"/>
+                            <constraint firstAttribute="trailing" secondItem="Awg-TV-ege" secondAttribute="trailing" id="4ZT-d9-1GR"/>
+                            <constraint firstItem="aco-bM-vYM" firstAttribute="leading" secondItem="7gu-76-X96" secondAttribute="leadingMargin" id="8UE-fn-bH3"/>
+                            <constraint firstItem="M2c-wC-wCj" firstAttribute="top" secondItem="Awg-TV-ege" secondAttribute="bottom" constant="8" id="Dfs-em-jYQ"/>
+                            <constraint firstItem="Awg-TV-ege" firstAttribute="top" secondItem="hej-mc-NGn" secondAttribute="bottom" constant="8" id="DvB-T5-r5t"/>
+                            <constraint firstItem="aco-bM-vYM" firstAttribute="top" secondItem="K7A-dn-p6t" secondAttribute="bottom" constant="64" id="GCw-n2-ZBn"/>
+                            <constraint firstItem="hej-mc-NGn" firstAttribute="top" secondItem="AOP-GL-ves" secondAttribute="bottom" constant="8" id="ImJ-6Z-ZaL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aco-bM-vYM" secondAttribute="trailing" id="MWU-ni-1eV"/>
+                            <constraint firstItem="hej-mc-NGn" firstAttribute="leading" secondItem="7gu-76-X96" secondAttribute="leadingMargin" id="RpM-uM-mER"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M2c-wC-wCj" secondAttribute="trailing" id="WK7-pf-EhG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hej-mc-NGn" secondAttribute="trailing" id="cId-xb-nhE"/>
+                            <constraint firstItem="M2c-wC-wCj" firstAttribute="leading" secondItem="7gu-76-X96" secondAttribute="leadingMargin" id="ug0-x5-7Af"/>
+                            <constraint firstItem="Awg-TV-ege" firstAttribute="leading" secondItem="7gu-76-X96" secondAttribute="leading" id="ulQ-cw-azX"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Geotification" id="wRD-VA-2HK">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="Twp-ZD-rjf">
+                    <navigationItem key="navigationItem" title="Add Geotifications" id="wRD-VA-2HK">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Twp-ZD-rjf">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="onCancel:" destination="Ijb-l5-DRd" id="7cI-bM-bYh"/>
@@ -70,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ss-Z7-YN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="994"/>
+            <point key="canvasLocation" x="1056.8" y="993.55322338830592"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="obb-eH-8tR">
@@ -111,4 +195,7 @@
             <point key="canvasLocation" x="161" y="994"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location" width="15" height="15"/>
+    </resources>
 </document>

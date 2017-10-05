@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class AddGeotificationViewController: UIViewController {
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func onCancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+
 }
