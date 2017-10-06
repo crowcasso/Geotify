@@ -12,9 +12,12 @@ import MapKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    let locationManger = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManger.delegate = self
+        locationManger.requestAlwaysAuthorization()
     }
 
     @IBAction func zoomToCurrentLocation(_ sender: UIBarButtonItem) {
