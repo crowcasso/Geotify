@@ -19,6 +19,8 @@ class AddGeotificationViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     
+    var viewController: ViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -29,6 +31,15 @@ class AddGeotificationViewController: UIViewController {
     }
 
     @IBAction func addNewGeotification(_ sender: UIButton) {
+        let radiusValue = Double(radius.text!) ?? 100.0
+        let noteValue = note.text!
+        let eventType: Geotification.EventType = (entryOrExit.selectedSegmentIndex == 0) ? .onEntry : .onExit
+        let coordinate = mapView.centerCoordinate
+        
+        print(radiusValue)
+        print(noteValue)
+        print(eventType)
+        print(coordinate)
     }
     
     @IBAction func zoomToCurrentLocation(_ sender: UIBarButtonItem) {
