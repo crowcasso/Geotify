@@ -12,7 +12,11 @@ import CoreLocation
 
 class AddGeotificationViewController: UIViewController {
         
+    @IBOutlet weak var entryOrExit: UISegmentedControl!
+    @IBOutlet weak var radius: UITextField!
+    @IBOutlet weak var note: UITextField!
     @IBOutlet weak var mapView: MKMapView!
+    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -24,6 +28,9 @@ class AddGeotificationViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func addNewGeotification(_ sender: UIButton) {
+    }
+    
     @IBAction func zoomToCurrentLocation(_ sender: UIBarButtonItem) {
         mapView.zoomToUserLocation()
     }

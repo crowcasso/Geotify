@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292372541F8BCB43005CDF9B /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292372531F8BCB43005CDF9B /* Geotification.swift */; };
 		29C233441F85121700F738E9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C233431F85121700F738E9 /* Extensions.swift */; };
 		29F0BC5E1F826BDF003CA75A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0BC5D1F826BDF003CA75A /* AppDelegate.swift */; };
 		29F0BC601F826BDF003CA75A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0BC5F1F826BDF003CA75A /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		292372531F8BCB43005CDF9B /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geotification.swift; sourceTree = "<group>"; };
 		29C233431F85121700F738E9 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		29F0BC5A1F826BDF003CA75A /* Geotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F0BC5D1F826BDF003CA75A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				29F0BC691F826BDF003CA75A /* Info.plist */,
 				29F0BC711F826EFC003CA75A /* AddGeotificationViewController.swift */,
 				29C233431F85121700F738E9 /* Extensions.swift */,
+				292372531F8BCB43005CDF9B /* Geotification.swift */,
 			);
 			path = Geotify;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				29F0BC721F826EFC003CA75A /* AddGeotificationViewController.swift in Sources */,
 				29F0BC601F826BDF003CA75A /* ViewController.swift in Sources */,
 				29F0BC5E1F826BDF003CA75A /* AppDelegate.swift in Sources */,
+				292372541F8BCB43005CDF9B /* Geotification.swift in Sources */,
 				29C233441F85121700F738E9 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
