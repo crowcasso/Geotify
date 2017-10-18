@@ -31,3 +31,38 @@ extension AddGeotificationViewController: CLLocationManagerDelegate {
         mapView.showsUserLocation = (status == .authorizedAlways)
     }
 }
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+extension ViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKCircle {
+            let circleRenderer = MKCircleRenderer(overlay: overlay)
+            circleRenderer.lineWidth = 1.0
+            circleRenderer.strokeColor = .purple
+            circleRenderer.fillColor = UIColor.purple.withAlphaComponent(0.4)
+            return circleRenderer
+        }
+        return MKCircleRenderer(overlay: overlay)
+    }
+}
+
+
+
+
+
+
+
+
+
+

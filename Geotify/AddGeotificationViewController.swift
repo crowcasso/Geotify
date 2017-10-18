@@ -24,6 +24,9 @@ class AddGeotificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
+        
+        // need this to make dismissing the keyboard work
+        hideKeyboardWhenTappedAround()
     }
     
     @IBAction func onCancel(_ sender: UIBarButtonItem) {
@@ -36,10 +39,9 @@ class AddGeotificationViewController: UIViewController {
         let eventType: Geotification.EventType = (entryOrExit.selectedSegmentIndex == 0) ? .onEntry : .onExit
         let coordinate = mapView.centerCoordinate
         
-        print(radiusValue)
-        print(noteValue)
-        print(eventType)
-        print(coordinate)
+        viewController?.addGeotification(coordinate, radiusValue, noteValue, eventType)
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func zoomToCurrentLocation(_ sender: UIBarButtonItem) {
